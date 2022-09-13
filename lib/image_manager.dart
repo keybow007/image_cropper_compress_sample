@@ -43,6 +43,8 @@ class ImageManager {
       compressFormat: ImageCompressFormat.jpg,
       compressQuality: 50,
       uiSettings: [
+        //Androidで「lockAspectRatio: false」にしないと切り取りができないみたい（デフォルトでロックされちゃってるんだって）
+        //https://pub.dev/documentation/image_cropper_platform_interface/latest/image_cropper_platform_interface/AndroidUiSettings/lockAspectRatio.html
         AndroidUiSettings(
             initAspectRatio: CropAspectRatioPreset.original,
             lockAspectRatio: false),
