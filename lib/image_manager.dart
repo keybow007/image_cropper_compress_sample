@@ -42,6 +42,11 @@ class ImageManager {
       // compressQuality: the value 0 - 100 to control the quality of image compression
       compressFormat: ImageCompressFormat.jpg,
       compressQuality: 50,
+      uiSettings: [
+        AndroidUiSettings(
+            initAspectRatio: CropAspectRatioPreset.original,
+            lockAspectRatio: false),
+      ]
     );
     return (croppedFile == null) ? imageFile : File(croppedFile.path);
   }
